@@ -37,7 +37,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.menuName.setText(dataMenu.get(i).getMenuName());
-        Glide.with(mContext).load(dataMenu.get(i).getImages()).into(viewHolder.imgMenu);
+        Glide.with(mContext).load(dataMenu.get(i).getImages().get(0)).into(viewHolder.imgMenu);
     }
 
     @Override
