@@ -18,18 +18,23 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    @BindView(R.id.edtEmail)
-    EditText edtEmail;
-    @BindView(R.id.edtPassword)
-    EditText edtPassword;
-    @BindView(R.id.btn_go_to_login)
-    Button btnLogin;
+   // @BindView(R.id.edit_text_username)
+    public EditText edtEmail;
+  //  @BindView(R.id.edit_text_password)
+  public EditText edtPassword;
+   // @BindView(R.id.btn_go_to_login)
+   public Button btnLogin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+
+        edtEmail = findViewById(R.id.edit_text_username);
+        edtPassword = findViewById(R.id.edit_text_password);
+        btnLogin = findViewById(R.id.button_login);
     }
 
     @OnClick(R.id.button_login)

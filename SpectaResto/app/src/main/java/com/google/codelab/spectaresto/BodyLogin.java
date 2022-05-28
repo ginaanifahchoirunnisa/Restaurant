@@ -28,10 +28,10 @@ public class BodyLogin{
 
 	@Override
  	public String toString(){
-		return 
-			"BodyLogin{" + 
-			"password = '" + password + '\'' + 
-			",username = '" + username + '\'' + 
+		return
+			"BodyLogin{" +
+			"password = '" + password + '\'' +
+			",username = '" + username + '\'' +
 			"}";
 		}
 }

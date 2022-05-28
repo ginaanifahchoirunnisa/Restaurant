@@ -17,9 +17,9 @@ public class LoginResponse{
 
 	@Override
  	public String toString(){
-		return 
-			"LoginResponse{" + 
-			"token = '" + token + '\'' + 
+		return
+			"LoginResponse{" +
+			"token = '" + token + '\'' +
 			"}";
 		}
 }

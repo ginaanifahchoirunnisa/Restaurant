@@ -5,7 +5,7 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface MainInterface {
-    @POST("api/login")
+    @POST("auth/login")
     Call<LoginResponse> postLogin(@Body BodyLogin bodyLogin);
 
 }

@@ -17,7 +17,7 @@ public class RestClient {
 
         if (service == null) {
             // Membuat base URL
-            String BASE_URL = "https://documenter.getpostman.com/view/12204297/TVKJwEWL#85736293-0c3e-49ed-a098-dfb69d521de2/";
+            String BASE_URL = "https://foodbukka.herokuapp.com/api/v1/";
 
             OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
             Retrofit.Builder builder = new Retrofit.Builder()
