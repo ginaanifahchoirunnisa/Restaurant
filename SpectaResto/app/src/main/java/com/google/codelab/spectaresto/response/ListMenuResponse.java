@@ -1,5 +1,6 @@
-package com.google.codelab.spectaresto;
+package com.google.codelab.spectaresto.response;
 
+import com.google.codelab.spectaresto.DataItem;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
