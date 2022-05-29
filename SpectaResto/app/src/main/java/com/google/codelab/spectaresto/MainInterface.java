@@ -4,6 +4,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface MainInterface {
     @POST("auth/login")
@@ -11,4 +12,7 @@ public interface MainInterface {
 
     @GET("menu")
     Call<ListMenuResponse> getList();
+
+    @GET("menu/{id}")
+    Call<SingleMenuResponse> getOneMenu(@Path("id") String postId);
 }

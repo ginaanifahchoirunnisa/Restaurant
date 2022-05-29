@@ -1,6 +1,7 @@
 package com.google.codelab.spectaresto;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,7 @@ import butterknife.ButterKnife;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
     private List<DataItem> dataMenu;
     private Context mContext;
-
+    public static final String EXTRA_MESSAGE = "com.google.codelab.spectaresto.extra.MESSAGE";
 
     public RecyclerAdapter(List<DataItem> dataMenu, Context mContext) {
         this.dataMenu = dataMenu;
@@ -45,7 +46,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return dataMenu.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @BindView(R.id.img_menu)
         ImageView imgMenu;
         @BindView(R.id.menu_name)
@@ -54,6 +55,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
+            itemView.setOnClickListener(this::onClick);
+        }
+
+        @Override
+        public void onClick(View view) {
+            String idMenu = dataMenu.get(getLayoutPosition()).getId();
+            Intent intent = new Intent(view.getContext(), MenuDetails.class);
+            intent.putExtra(EXTRA_MESSAGE, idMenu);
+            view.getContext().startActivity(intent);
         }
     }
 }
