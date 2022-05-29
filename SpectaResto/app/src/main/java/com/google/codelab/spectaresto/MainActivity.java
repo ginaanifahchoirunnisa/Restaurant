@@ -7,17 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.google.codelab.spectaresto.api.RestClient;
-import com.google.codelab.spectaresto.response.ListMenuResponse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,30 +29,50 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rvListMenu;
 
     private List<DataItem> listItem;
-    private SearchView btn_search;
     private RecyclerAdapter adapter;
-    private EditText edt;
+    private EditText edt_search;
+    private Button btn_cari;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        btn_search = findViewById(R.id.button_search);
-        btn_search.clearFocus();
-        btn_search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
+//
+//        edt_search = findViewById(R.id.cari);
+//        btn_cari = findViewById(R.id.btn_search);
+//        String searching_key = edt_search.getText().toString().trim();
+//
+//        btn_cari.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+////                startActivity(intent);
+//                RestClient.getService().getList("Meatballs").enqueue(new Callback<ListMenuResponse>() {
+//                    @Override
+//                    public void onResponse(Call<ListMenuResponse> call, Response<ListMenuResponse> response) {
+//                        if (response.isSuccessful()){
+//                            listItem = response.body().getData();
+//
+//                            adapter = new RecyclerAdapter(listItem, MainActivity.this);
+//                            rvListMenu.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+//                            rvListMenu.setAdapter(adapter);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<ListMenuResponse> call, Throwable t) {
+//
+//                    }
+//                });
+//
+//            }
+//        });
+//
+//
+//
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                filterList(newText);
-
-                return false;
-            }
-        });
 
         RestClient.getService().getList().enqueue(new Callback<ListMenuResponse>() {
             @Override
@@ -76,24 +92,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.data_menu,menu);
 
-    private void filterList(String text)
-    {
-        List<DataItem> filteredList = new ArrayList<>();
-        for (DataItem item : listItem)
-        {
-            if(item.getMenuName().toLowerCase().contains(text.toLowerCase()))
-            {
-                filteredList.add(item);
-            }else if(filteredList.isEmpty())
-            {
-                Toast.makeText(this,"No data ", Toast.LENGTH_SHORT).show();
-            }else{
-                adapter.SETFilteredList(filteredList);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
             }
-        }
 
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+        return true;
     }
 }

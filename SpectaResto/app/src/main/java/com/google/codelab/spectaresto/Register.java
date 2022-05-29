@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.codelab.spectaresto.api.MainInterface;
 import com.google.codelab.spectaresto.api.RestClient;
 
 

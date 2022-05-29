@@ -10,17 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.codelab.spectaresto.api.RestClient;
-import com.google.codelab.spectaresto.login.BodyLogin;
-import com.google.codelab.spectaresto.login.LoginResponse;
-
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends AppCompatActivity {
+public class
+LoginActivity extends AppCompatActivity {
    // @BindView(R.id.edit_text_username)
     public EditText edtEmail;
   //  @BindView(R.id.edit_text_password)
@@ -44,8 +42,8 @@ public class LoginActivity extends AppCompatActivity {
     public void onViewClicked() {
 
         BodyLogin bodyLogin =  new BodyLogin();
-        bodyLogin.setUsername(edtEmail.getText().toString().trim());
-        bodyLogin.setPassword(edtPassword.getText().toString().trim());
+        bodyLogin.setUsername(edtEmail.getText().toString());
+        bodyLogin.setPassword(edtPassword.getText().toString());
 
 
         RestClient.getService().postLogin(bodyLogin).enqueue(new Callback<LoginResponse>() {
@@ -54,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 Toast.makeText(LoginActivity.this, response.body().getToken(), Toast.LENGTH_SHORT).show();
                 Log.i("Response",response.message());
-                startActivity(new Intent(getApplicationContext(), Register.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
 

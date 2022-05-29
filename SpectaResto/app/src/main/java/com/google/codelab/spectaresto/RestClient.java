@@ -1,6 +1,7 @@
-package com.google.codelab.spectaresto.api;
+package com.google.codelab.spectaresto;
 
-import com.google.codelab.spectaresto.api.MainInterface;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

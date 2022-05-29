@@ -1,4 +1,4 @@
-package com.google.codelab.spectaresto.login;
+package com.google.codelab.spectaresto;
 
 import com.google.gson.annotations.SerializedName;
 
