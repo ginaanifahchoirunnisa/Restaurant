@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Username"
+        android:hint="Username"
         android:layout_marginHorizontal="30dp"
         android:textColor="@color/colorAccent"
         />
@@ -30,7 +30,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="username"
         android:inputType="text"
         android:layout_marginHorizontal="30dp"
         android:layout_marginBottom="30dp"
@@ -40,7 +39,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:hint="Password"
         android:layout_marginHorizontal="30dp"
         android:textColor="@color/colorAccent"
         />
@@ -48,7 +47,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="password"
         android:id="@+id/edit_text_password"
         android:inputType="textPassword"
         android:layout_marginHorizontal="30dp"
@@ -60,5 +58,13 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="120dp"
         android:text="LOGIN" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/button_register_page"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="120dp"
+        android:text="REGISTER" />
+
 
 </LinearLayout>

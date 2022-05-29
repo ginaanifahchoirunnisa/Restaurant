@@ -3,11 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/SpectaResto/SpectaResto/app/src/main/res/layout/activity_login.xml" value="0.18385416666666668" />
-        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/SpectaResto/SpectaResto/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/SpectaResto/SpectaResto/app/src/main/res/layout/activity_main2.xml" value="0.18385416666666668" />
-        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/SpectaResto/SpectaResto/app/src/main/res/layout/list_item.xml" value="0.1" />
-        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/SpectaResto/SpectaResto/app/src/main/res/menu/data_menu.xml" value="0.1" />
+        <entry key="..\:/Documents/POLBAN/Semester 4/PPB/UAS/Restaurant/SpectaResto/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Documents/POLBAN/Semester 4/PPB/UAS/Restaurant/SpectaResto/app/src/main/res/layout/list_item.xml" value="0.19895833333333332" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/SpectaResto/app/src/main/res/drawable/ic_launcher_background.xml" value="0.171" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/SpectaResto/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/SpectaResto/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/Restaurant/SpectaResto/app/src/main/res/layout/activity_detail_produk.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/Restaurant/SpectaResto/app/src/main/res/layout/activity_home_resto.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/Restaurant/SpectaResto/app/src/main/res/layout/activity_login.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/Restaurant/SpectaResto/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/Restaurant/SpectaResto/app/src/main/res/layout/activity_register.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/Restaurant/SpectaResto/app/src/main/res/layout/activity_register2.xml" value="0.13541666666666666" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/Restaurant/SpectaResto/app/src/main/res/menu/main_menu.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/TUBES/Restaurant/SpectaResto/app/src/main/res/menu/menu.xml" value="0.1984375" />
       </map>
     </option>
   </component>

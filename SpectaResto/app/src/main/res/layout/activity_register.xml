@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Register">
+    tools:context=".view.register.Register">
 
     <TextView
         android:layout_width="match_parent"
@@ -30,7 +30,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="username"
         android:inputType="text"
         android:layout_marginHorizontal="30dp"
         android:layout_marginBottom="30dp"
@@ -48,7 +47,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="email"
         android:id="@+id/edit_text_email"
         android:inputType="text"
         android:layout_marginHorizontal="30dp"
@@ -65,7 +63,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="phone number"
         android:id="@+id/edit_text_nohp"
         android:inputType="text"
         android:layout_marginHorizontal="30dp"
@@ -82,7 +79,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="password"
         android:id="@+id/edit_text_pw"
         android:inputType="text"
         android:layout_marginHorizontal="30dp"
