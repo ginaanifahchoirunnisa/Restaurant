@@ -66,7 +66,7 @@ LoginActivity extends AppCompatActivity {
             // TODO method dibawah otomatis pada saat new Callback
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                if(!response.isSuccessful()) {
+                if(response.isSuccessful()) {
                     Toast.makeText(LoginActivity.this, response.body().getToken(), Toast.LENGTH_SHORT).show();
                     Log.i("Response", response.message());
                     startActivity(new Intent(getApplicationContext(), MainActivity2.class));

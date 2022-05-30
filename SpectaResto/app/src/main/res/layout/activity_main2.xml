@@ -10,13 +10,9 @@
         android:id="@+id/rvListMenu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_margin="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
     </androidx.recyclerview.widget.RecyclerView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

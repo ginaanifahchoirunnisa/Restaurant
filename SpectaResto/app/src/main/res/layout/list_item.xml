@@ -2,26 +2,33 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_margin="25dp">
+    android:orientation="horizontal">
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/img_menu"
-        android:src="@mipmap/ic_launcher"/>
-
-    <TextView
-        android:paddingLeft="10dp"
-        android:textSize="20dp"
-        android:textStyle="bold"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:id="@+id/menu_name"
-        android:text="Nama"
-        android:layout_centerInParent="true"
-        android:layout_toRightOf="@+id/img_menu"/>
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded_corner">
 
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/img_menu"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/menu_name"
+            android:layout_gravity="center"
+            android:text="Nama"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/img_menu"/>
+    </LinearLayout>
 
 </RelativeLayout>

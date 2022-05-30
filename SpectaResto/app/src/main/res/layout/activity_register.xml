@@ -88,15 +88,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button_regist"
-        android:text="Regist"
-        />
-
+        android:text="Register"
+        android:layout_gravity="center"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/notif"
-
-        />
+        android:id="@+id/notif" />
 
 </LinearLayout>
