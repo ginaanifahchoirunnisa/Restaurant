@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SpectaResto</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
 </resources>

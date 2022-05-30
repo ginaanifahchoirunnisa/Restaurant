@@ -9,4 +9,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorAccent">#FF0000</color>
+    <color name="primaryOrange">#FF6600</color>
+    <color name="lightOrange">#FFB787</color>
+    <color name="secondOrange">#FF8533</color>
+    <color name="pastelOrange">#60FFB685</color>
 </resources>

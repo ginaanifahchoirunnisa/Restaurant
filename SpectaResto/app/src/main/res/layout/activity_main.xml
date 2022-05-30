@@ -4,18 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
 
-    <Button
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        app:srcCompat="@drawable/spectaresto" />
+
+    <TextView
+        android:id="@+id/app_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/next_page"
-        android:text="NEXT"
-        android:layout_marginTop="1000px"
-        />
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="20sp" />
 
 
-<!--    <EditText-->
+    <!--    <EditText-->
 <!--        android:id="@+id/cari"-->
 <!--        android:layout_width="237dp"-->
 <!--        android:layout_height="45dp"-->

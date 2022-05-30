@@ -22,49 +22,54 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"
+        android:text="@string/username"
         android:layout_marginHorizontal="30dp"
         android:textColor="@color/colorAccent"
         />
 
     <EditText
+        android:id="@+id/edit_text_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
         android:layout_marginHorizontal="30dp"
         android:layout_marginBottom="30dp"
-        android:id="@+id/edit_text_username"
-        />
+        android:hint="@string/username"
+        android:inputType="text"
+        android:minHeight="48dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:text="@string/password"
         android:layout_marginHorizontal="30dp"
         android:textColor="@color/colorAccent"
         />
 
     <EditText
+        android:id="@+id/edit_text_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_text_password"
-        android:inputType="textPassword"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:minHeight="48dp" />
 
     <Button
-        android:layout_width="wrap_content"
         android:id="@+id/button_login"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="120dp"
-        android:text="LOGIN" />
+        android:layout_gravity="center"
+        android:text="LOGIN"
+        android:backgroundTint="@color/primaryOrange"/>
 
     <Button
-        android:layout_width="wrap_content"
         android:id="@+id/button_register_page"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="120dp"
-        android:text="REGISTER" />
+        android:layout_gravity="center"
+        android:text="REGISTER"
+        android:backgroundTint="@color/lightOrange" />
 
     <TextView
         android:layout_width="match_parent"
