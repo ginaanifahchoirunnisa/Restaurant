@@ -26,7 +26,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-    private int splash_time = 3000;
+    private int splash_time = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
