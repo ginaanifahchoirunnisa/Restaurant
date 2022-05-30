@@ -1,29 +1,33 @@
 package com.google.codelab.spectaresto;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import butterknife.BindView;
+import androidx.appcompat.app.AppCompatActivity;
+
+
+import com.google.codelab.spectaresto.view.register.Register;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends AppCompatActivity {
+public class
+LoginActivity extends AppCompatActivity {
    // @BindView(R.id.edit_text_username)
     public EditText edtEmail;
   //  @BindView(R.id.edit_text_password)
   public EditText edtPassword;
    // @BindView(R.id.btn_go_to_login)
-   public Button btnLogin;
+   public Button btnLogin, btn_register;
 
 
     @Override
@@ -35,6 +39,16 @@ public class LoginActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edit_text_username);
         edtPassword = findViewById(R.id.edit_text_password);
         btnLogin = findViewById(R.id.button_login);
+
+
+        btn_register = findViewById(R.id.button_register_page);
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent gotopageregister = new Intent(LoginActivity.this, Register.class);
+                startActivity(gotopageregister);
+            }
+        });
     }
 
     @OnClick(R.id.button_login)
@@ -51,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 Toast.makeText(LoginActivity.this, response.body().getToken(), Toast.LENGTH_SHORT).show();
                 Log.i("Response",response.message());
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity2.class));
                 finish();
             }
 

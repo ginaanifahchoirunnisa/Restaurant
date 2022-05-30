@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,19 +15,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> implements Filterable {
     private List<DataItem> dataMenu;
+    private List<DataItem> dataMenuFull;
     private Context mContext;
     public static final String EXTRA_MESSAGE = "com.google.codelab.spectaresto.extra.MESSAGE";
 
     public RecyclerAdapter(List<DataItem> dataMenu, Context mContext) {
         this.dataMenu = dataMenu;
+        this.dataMenuFull = new ArrayList<>(dataMenu);
         this.mContext = mContext;
+    }
+
+
+    public void setFilteredList(List<DataItem> filteredList)
+    {
+        this.dataMenu = filteredList;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -45,6 +57,43 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public int getItemCount() {
         return dataMenu.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return dataFilter;
+    }
+
+    private Filter dataFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            List<DataItem> filteredList = new ArrayList<>();
+            if(charSequence == null || charSequence.length()== 0)
+            {
+                filteredList.addAll(dataMenuFull);
+            }else{
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for(DataItem item :  dataMenuFull)
+                {
+                    if(item.getMenuName().toLowerCase().contains(filterPattern))
+                    {
+                        filteredList.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            dataMenu.clear();
+            dataMenu.addAll((List) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @BindView(R.id.img_menu)

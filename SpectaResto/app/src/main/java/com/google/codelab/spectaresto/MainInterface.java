@@ -1,5 +1,8 @@
 package com.google.codelab.spectaresto;
 
+import com.google.codelab.spectaresto.model.register.BodyRegister;
+import com.google.codelab.spectaresto.view.register.Register;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -15,4 +18,11 @@ public interface MainInterface {
 
     @GET("menu/{id}")
     Call<SingleMenuResponse> getOneMenu(@Path("id") String postId);
+
+    @POST("auth/register")
+    Call<Register> postRegister(@Body BodyRegister bodyRegister);
+
+
+
+
 }

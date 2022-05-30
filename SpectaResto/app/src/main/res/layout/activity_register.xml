@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".view.register.Register">
 
     <TextView
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:background="@drawable/bg"
         android:fontFamily="cursive"
         android:paddingVertical="70dp"
-        android:text="LOGIN"
+        android:text="REGISTER"
         android:textAlignment="center"
         android:textColor="#FFF"
         android:textSize="40sp"
@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"
+        android:text="Username"
         android:layout_marginHorizontal="30dp"
         android:textColor="@color/colorAccent"
         />
@@ -33,13 +33,13 @@
         android:inputType="text"
         android:layout_marginHorizontal="30dp"
         android:layout_marginBottom="30dp"
-        android:id="@+id/edit_text_username"
+        android:id="@+id/edit_text_uname"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:text="Email"
         android:layout_marginHorizontal="30dp"
         android:textColor="@color/colorAccent"
         />
@@ -47,24 +47,56 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_text_password"
-        android:inputType="textPassword"
+        android:id="@+id/edit_text_email"
+        android:inputType="text"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone Number"
+        android:layout_marginHorizontal="30dp"
+        android:textColor="@color/colorAccent"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text_nohp"
+        android:inputType="text"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:layout_marginHorizontal="30dp"
+        android:textColor="@color/colorAccent"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_text_pw"
+        android:inputType="text"
         android:layout_marginHorizontal="30dp"
         android:layout_marginBottom="30dp"/>
 
     <Button
         android:layout_width="wrap_content"
-        android:id="@+id/button_login"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="120dp"
-        android:text="LOGIN" />
+        android:id="@+id/button_regist"
+        android:text="Regist"
+        />
 
-    <Button
+
+    <TextView
         android:layout_width="wrap_content"
-        android:id="@+id/button_register_page"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="120dp"
-        android:text="REGISTER" />
+        android:id="@+id/notif"
 
+        />
 
 </LinearLayout>

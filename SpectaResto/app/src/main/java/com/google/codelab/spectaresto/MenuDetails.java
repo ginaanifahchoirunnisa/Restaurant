@@ -42,8 +42,6 @@ public class MenuDetails extends AppCompatActivity {
                     viewPager2 = findViewById(R.id.viewPager2);
                     sliderAdapter = new SliderAdapter(response.body().getResult().getImages(), MenuDetails.this);
                     viewPager2.setAdapter(sliderAdapter);
-//                    ImageView image = findViewById(R.id.menu_images);
-//                    Glide.with(MenuDetails.this).load(response.body().getResult().getImages().get(0)).into(image);
 
                     String menuName = response.body().getResult().getMenuName();
                     String desc = response.body().getResult().getDescription();
