@@ -3,6 +3,8 @@ package com.google.codelab.spectaresto;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ import retrofit2.Response;
 public class MenuDetails extends AppCompatActivity {
     ViewPager2 viewPager2;
     SliderAdapter sliderAdapter;
+    Button btn_add_fav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +32,20 @@ public class MenuDetails extends AppCompatActivity {
 
         TextView name = findViewById(R.id.menu_name);
         TextView detail = findViewById(R.id.menu_description);
+        btn_add_fav = findViewById(R.id.btn_add_fav);
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(RecyclerAdapter.EXTRA_MESSAGE);
         //detail.setText(message);
+
+        btn_add_fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = getIntent();
+                String message = intent.getStringExtra(RecyclerAdapter.EXTRA_MESSAGE);
+            }
+        });
 
         RestClient.getService().getOneMenu(message).enqueue(new Callback<SingleMenuResponse>() {
             @Override
@@ -45,8 +58,17 @@ public class MenuDetails extends AppCompatActivity {
 
                     String menuName = response.body().getResult().getMenuName();
                     String desc = response.body().getResult().getDescription();
+                    int v = response.body().getResult().getV();
                     name.setText(menuName);
                     detail.setText(desc);
+
+                    btn_add_fav.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+
+                        }
+                    });
                 }
             }
 

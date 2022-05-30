@@ -69,18 +69,20 @@ LoginActivity extends AppCompatActivity {
                 if(!response.isSuccessful()) {
                     Toast.makeText(LoginActivity.this, response.body().getToken(), Toast.LENGTH_SHORT).show();
                     Log.i("Response", response.message());
-                    startActivity(new Intent(getApplicationContext(), MainActivity2.class));
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
                 }else{
-                    String msgs = "Login gagal";
+                    String msgs = "Login berhasil";
                     Toast.makeText(LoginActivity.this,msgs,Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), MainActivity2.class));
                 }
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                msgn.setText("gagal login");
+                String msgs = "Email ";
+                Toast.makeText(LoginActivity.this,msgs,Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
     }

@@ -16,6 +16,9 @@
         android:theme="@style/Theme.SpectaResto"
         tools:targetApi="31">
         <activity
+            android:name=".BookmarkActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.register.Register"
             android:exported="false" />
         <activity

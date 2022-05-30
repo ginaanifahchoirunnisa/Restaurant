@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -14,17 +15,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.codelab.spectaresto.dao.database.AppDatabase;
+import com.google.codelab.spectaresto.dao.entity.Bookmark;
+import com.google.codelab.spectaresto.view.register.Register;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> implements Filterable {
     private List<DataItem> dataMenu;
     private List<DataItem> dataMenuFull;
     private Context mContext;
+    public  List<Bookmark> bookmark = new ArrayList<>();
+private AppDatabase database;
     public static final String EXTRA_MESSAGE = "com.google.codelab.spectaresto.extra.MESSAGE";
 
     public RecyclerAdapter(List<DataItem> dataMenu, Context mContext) {
@@ -100,12 +107,42 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         ImageView imgMenu;
         @BindView(R.id.menu_name)
         TextView menuName;
+        Button btn_bookmark;
+
+
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
             itemView.setOnClickListener(this::onClick);
+            btn_bookmark =itemView.findViewById(R.id.btn_bookmark);
+
+            btn_bookmark.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                  //  String idMenu = dataMenu.get(getLayoutPosition()).getId();
+                    String namaMenu = dataMenu.get(getLayoutPosition()).getMenuName();
+                    String deskripsi = dataMenu.get(getLayoutPosition()).getDescription();
+                    //Intent i = new Intent(view.getContext(), Register.class);
+                    Bookmark bookmark1 = new Bookmark();
+                    bookmark1.setMenuName(namaMenu);
+                   // bookmark1.setId(idMenu);
+                    bookmark1.setDescription(deskripsi);
+//                    bookmark.add(bookmark1);
+                    database.bookmarkDao().addToBookmark(bookmark1);
+
+
+                   // view.getContext().startActivity(i);
+
+                }
+            });
+
+
+
+
         }
+
 
         @Override
         public void onClick(View view) {
@@ -114,5 +151,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             intent.putExtra(EXTRA_MESSAGE, idMenu);
             view.getContext().startActivity(intent);
         }
+
     }
 }

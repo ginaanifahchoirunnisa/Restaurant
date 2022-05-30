@@ -23,5 +23,13 @@
         android:layout_centerInParent="true"
         android:layout_toRightOf="@+id/img_menu"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_bookmark"
+        android:text="favorite"
+        android:layout_below="@+id/img_menu"
+        />
+
 
 </RelativeLayout>
