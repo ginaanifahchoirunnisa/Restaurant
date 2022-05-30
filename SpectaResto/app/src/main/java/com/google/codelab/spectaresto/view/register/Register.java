@@ -11,14 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.google.codelab.spectaresto.BodyLogin;
 import com.google.codelab.spectaresto.LoginActivity;
-import com.google.codelab.spectaresto.LoginResponse;
-import com.google.codelab.spectaresto.MainActivity2;
 import com.google.codelab.spectaresto.MainInterface;
 import com.google.codelab.spectaresto.R;
+import com.google.codelab.spectaresto.RegisterResponse;
 import com.google.codelab.spectaresto.RestClient;
 import com.google.codelab.spectaresto.model.register.BodyRegister;
+
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -32,6 +31,7 @@ public class Register extends AppCompatActivity {
     private TextView notif;
     private MainInterface jsonPlaceHolderApi;
     private Button btn_regist;
+    private BodyRegister bdregister;
 
 
     @Override
@@ -49,12 +49,6 @@ public class Register extends AppCompatActivity {
         btn_regist = findViewById(R.id.button_regist);
 
 
-        BodyRegister bodyRegister = new BodyRegister();
-        bodyRegister.setUsername(uname.getText().toString());
-        bodyRegister.setPassword(pw.getText().toString());
-        bodyRegister.setEmail(email.getText().toString());
-        bodyRegister.setPhoneNumber(nohp.getText().toString());
-
 
     }
 
@@ -68,18 +62,28 @@ public class Register extends AppCompatActivity {
         bodyRegister.setPhoneNumber(nohp.getText().toString());
         bodyRegister.setEmail(email.getText().toString());
 
+        RestClient.getServices().postRegister(bodyRegister).enqueue(new Callback<RegisterResponse>() {
+            @Override
+            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                if(response.isSuccessful())
+                {
+                    String msgs = "success ... ";
+                    Toast.makeText(Register.this,msgs,Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Register.this, LoginActivity.class));
+                }else{
+                    String msgs = "An error occured please try again later ... ";
+                    Toast.makeText(Register.this,msgs,Toast.LENGTH_SHORT).show();
+                }
+            }
 
-      RestClient.getService().postRegister(bodyRegister).enqueue(new Callback<Register>() {
-          @Override
-          public void onResponse(Call<Register> call, Response<Register> response) {
-              startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-          }
+            @Override
+            public void onFailure(Call<RegisterResponse> call, Throwable t) {
 
-          @Override
-          public void onFailure(Call<Register> call, Throwable t) {
+            }
+        });
 
-          }
-      });
     }
+
+
 
 }

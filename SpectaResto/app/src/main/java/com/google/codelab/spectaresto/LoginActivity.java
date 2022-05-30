@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,7 @@ LoginActivity extends AppCompatActivity {
     public EditText edtEmail;
   //  @BindView(R.id.edit_text_password)
   public EditText edtPassword;
+  public TextView msgn;
    // @BindView(R.id.btn_go_to_login)
    public Button btnLogin, btn_register;
 
@@ -39,6 +41,7 @@ LoginActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edit_text_username);
         edtPassword = findViewById(R.id.edit_text_password);
         btnLogin = findViewById(R.id.button_login);
+        msgn = findViewById(R.id.msg);
 
 
         btn_register = findViewById(R.id.button_register_page);
@@ -63,15 +66,21 @@ LoginActivity extends AppCompatActivity {
             // TODO method dibawah otomatis pada saat new Callback
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                Toast.makeText(LoginActivity.this, response.body().getToken(), Toast.LENGTH_SHORT).show();
-                Log.i("Response",response.message());
-                startActivity(new Intent(getApplicationContext(), MainActivity2.class));
-                finish();
+                if(!response.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, response.body().getToken(), Toast.LENGTH_SHORT).show();
+                    Log.i("Response", response.message());
+                    startActivity(new Intent(getApplicationContext(), MainActivity2.class));
+
+                }else{
+                    String msgs = "Login gagal";
+                    Toast.makeText(LoginActivity.this,msgs,Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                }
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-
+                msgn.setText("gagal login");
             }
         });
     }

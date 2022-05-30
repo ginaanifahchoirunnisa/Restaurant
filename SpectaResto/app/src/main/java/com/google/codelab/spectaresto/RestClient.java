@@ -44,7 +44,7 @@ public class RestClient {
         OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(loggingInterceptor).build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
+                .baseUrl("https://foodbukka.herokuapp.com/api/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();
@@ -52,6 +52,13 @@ public class RestClient {
 //        jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
         return retrofit;
     }
+
+    public static MainInterface getServices()
+    {
+        MainInterface userService = getRetrofit().create(MainInterface.class);
+        return userService;
+    }
+
 
 
 }
