@@ -21,6 +21,9 @@ import com.google.codelab.spectaresto.model.register.BodyRegister;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -32,7 +35,6 @@ public class Register extends AppCompatActivity {
     private MainInterface jsonPlaceHolderApi;
     private Button btn_regist;
     private BodyRegister bdregister;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +49,6 @@ public class Register extends AppCompatActivity {
         notif = findViewById(R.id.notif);
 
         btn_regist = findViewById(R.id.button_regist);
-
-
-
     }
 
 

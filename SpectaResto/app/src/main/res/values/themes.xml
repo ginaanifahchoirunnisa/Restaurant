@@ -14,10 +14,4 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/primaryOrange</item>
-        <item name="colorPrimaryVariant">@color/secondOrange</item>
-        <item name="colorOnPrimary">@color/white</item>
-    </style>
-
 </resources>
