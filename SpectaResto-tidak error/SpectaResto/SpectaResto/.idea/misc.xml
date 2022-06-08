@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/drawable/ic_favorite_red_24dp.xml" value="0.2055" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/layout/activity_detail_produk.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/layout/activity_home_resto.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/layout/activity_login.xml" value="0.18854166666666666" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/layout/activity_main.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/layout/activity_main2.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/layout/activity_register.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/layout/fav_item.xml" value="0.1" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/layout/list_item.xml" value="0.33" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/layout/menu_details.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/layout/slider_item.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/menu/data_menu.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/menu/main_menu.xml" value="0.19947916666666668" />
+        <entry key="..\:/KULIAH/SEMESTER4/PemrogramanMobile/tugaski/SpectaResto/SpectaResto/app/src/main/res/menu/menu.xml" value="0.19947916666666668" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
